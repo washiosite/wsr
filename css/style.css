@@ -19,39 +19,25 @@ html {
 
 
 body {
-
     margin: 0;
 
     font-family:
         "Noto Sans JP",
         "Yu Gothic",
-        "Hiragino Kaku Gothic ProN",
         sans-serif;
 
     color: #333;
 
     min-height: 100vh;
 
-
-    /*
-      藤色 + 一斤染
-      135°
-      500px周期
-    */
-    background:
-        repeating-linear-gradient(
-            135deg,
-            #A59ACA 0px,
-            #A59ACA 500px,
-            #F5B1AA 500px,
-            #F5B1AA 1000px
-        );
-
+    background: linear-gradient(
+        135deg,
+        #A59ACA 0%,
+        #F5B1AA 100%
+    );
 
     position: relative;
-
 }
-
 
 /* -------------------------
    七宝模様
