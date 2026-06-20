@@ -17,45 +17,33 @@ html {
 
 body {
 
-    margin: 0;
+    margin:0;
 
-    font-family:
-        "Noto Sans JP",
-        "Yu Gothic",
-        "Hiragino Kaku Gothic ProN",
-        sans-serif;
-
-    color: #333;
-
-    min-height: 100vh;
+    min-height:100vh;
 
 
-    /*
-       背景
-       藤色 #A59ACA
-       一斤染 #F5B1AA
-       135°
-       500pxごと切替
-    */
     background-image:
 
-        /* 七宝 1段目 */
+
+        /* 七宝 1,3,5...行 */
         radial-gradient(
-            circle,
-            transparent 48px,
+            circle 50px at 50px 50px,
+            transparent 49px,
             rgba(255,255,255,0.15) 49px,
-            rgba(255,255,255,0.15) 50px,
+            rgba(255,255,255,0.15) 51px,
             transparent 51px
         ),
 
-        /* 七宝 2段目 */
+
+        /* 七宝 2,4,6...行 */
         radial-gradient(
-            circle,
-            transparent 48px,
+            circle 50px at 50px 50px,
+            transparent 49px,
             rgba(255,255,255,0.15) 49px,
-            rgba(255,255,255,0.15) 50px,
+            rgba(255,255,255,0.15) 51px,
             transparent 51px
         ),
+
 
         /* グラデーション */
         repeating-linear-gradient(
@@ -68,34 +56,33 @@ body {
 
 
     /*
-       七宝
-       横100px
-       縦50px
+      円直径100px
+      横100px間隔
+      縦50px間隔
     */
+
     background-size:
 
-        100px 50px,
-        100px 50px,
+        100px 100px,
+        100px 100px,
         auto;
 
 
     /*
-       交互行50pxオフセット
+      偶数行を50px右へ
     */
+
     background-position:
 
         0 0,
-        50px 25px,
+        50px 50px,
         0 0;
 
 
     background-repeat:
         repeat;
 
-
-    position: relative;
 }
-
 
 
 /* =========================
