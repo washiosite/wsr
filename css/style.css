@@ -1,0 +1,338 @@
+/* =========================
+   和幸贈高速鉄道 共通CSS
+   ========================= */
+
+
+/* 基本設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        "Noto Sans JP",
+        "Yu Gothic",
+        sans-serif;
+
+    color: #333;
+
+    /* 藤色＋一斤染グラデーション */
+    background:
+        linear-gradient(
+            135deg,
+            #A59ACA 0%,
+            #F5B1AA 100%
+        );
+
+    min-height: 100vh;
+
+    position: relative;
+}
+
+
+/* 七宝模様 */
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            transparent 48px,
+            rgba(255,255,255,0.15) 50px,
+            transparent 52px
+        );
+
+    background-size:
+        100px 50px;
+
+    background-position:
+        0 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+
+/* =========================
+   ヘッダー
+   ========================= */
+
+header {
+
+    padding: 25px 20px;
+
+    background:
+        rgba(255,255,255,0.25);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+.header-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 2.2rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.subtitle {
+
+    margin-top: 8px;
+
+    font-size: 1.1rem;
+
+}
+
+
+
+/* ナビゲーション */
+
+nav ul {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    list-style: none;
+
+    padding: 0;
+
+    margin-top: 25px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #333;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.45);
+
+    transition: 0.3s;
+
+}
+
+
+nav a:hover {
+
+    background:
+        rgba(255,255,255,0.8);
+
+}
+
+
+
+/* =========================
+   メイン
+   ========================= */
+
+main {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+}
+
+
+/* トップ紹介 */
+
+.hero {
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.35);
+
+    border-radius: 25px;
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+
+.hero h2 {
+
+    font-size: 2rem;
+
+}
+
+
+
+/* =========================
+   カード
+   ========================= */
+
+
+.quick-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 25px;
+
+    margin-top: 40px;
+
+}
+
+
+.card {
+
+    display: block;
+
+    padding: 30px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    background:
+        rgba(255,255,255,0.45);
+
+    border-radius: 20px;
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:0.3s;
+
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255,255,255,0.7);
+
+}
+
+
+
+/* =========================
+   ニュース
+   ========================= */
+
+
+.latest-news {
+
+    margin-top: 50px;
+
+    padding: 30px;
+
+    background:
+        rgba(255,255,255,0.35);
+
+    border-radius:20px;
+
+}
+
+
+.news-item {
+
+    padding:15px 0;
+
+    border-bottom:
+        1px solid rgba(0,0,0,0.1);
+
+}
+
+
+.news-item a {
+
+    color:#333;
+
+    text-decoration:none;
+
+}
+
+
+
+/* =========================
+   フッター
+   ========================= */
+
+footer {
+
+    text-align:center;
+
+    padding:25px;
+
+    background:
+        rgba(255,255,255,0.25);
+
+    margin-top:50px;
+
+}
+
+
+
+/* =========================
+   スマホ対応
+   ========================= */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:1.7rem;
+    }
+
+
+    nav ul{
+
+        flex-direction:column;
+
+    }
+
+
+    nav a{
+
+        display:block;
+
+        text-align:center;
+
+    }
+
+}
