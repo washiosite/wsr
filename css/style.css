@@ -4,10 +4,7 @@
 ===================================== */
 
 
-/* -------------------------
-   基本設定
-------------------------- */
-
+/* 基本設定 */
 * {
     box-sizing: border-box;
 }
@@ -19,48 +16,30 @@ html {
 
 
 body {
+
     margin: 0;
 
     font-family:
         "Noto Sans JP",
         "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
         sans-serif;
 
     color: #333;
 
     min-height: 100vh;
 
-    background: linear-gradient(
-        135deg,
-        #A59ACA 0%,
-        #F5B1AA 100%
-    );
 
-    position: relative;
-}
-
-/* -------------------------
-   七宝模様
-------------------------- */
-
-
-/*
-   1段目
-   ○ ○ ○ ○
-*/
-
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-
+    /*
+       背景
+       藤色 #A59ACA
+       一斤染 #F5B1AA
+       135°
+       500pxごと切替
+    */
     background-image:
 
+        /* 七宝 1段目 */
         radial-gradient(
             circle,
             transparent 48px,
@@ -69,97 +48,71 @@ body::before {
             transparent 51px
         ),
 
+        /* 七宝 2段目 */
         radial-gradient(
             circle,
             transparent 48px,
             rgba(255,255,255,0.15) 49px,
             rgba(255,255,255,0.15) 50px,
             transparent 51px
+        ),
+
+        /* グラデーション */
+        repeating-linear-gradient(
+            135deg,
+            #A59ACA 0px,
+            #A59ACA 500px,
+            #F5B1AA 500px,
+            #F5B1AA 1000px
         );
 
 
     /*
+       七宝
        横100px
        縦50px
-       交互配置
     */
-
     background-size:
 
         100px 50px,
-        100px 50px;
+        100px 50px,
+        auto;
 
 
+    /*
+       交互行50pxオフセット
+    */
     background-position:
 
         0 0,
-        50px 25px;
+        50px 25px,
+        0 0;
 
 
-    pointer-events: none;
+    background-repeat:
+        repeat;
 
-
-    z-index: 0;
-
-}
-
-
-
-/* -------------------------
-   全体コンテナ
-------------------------- */
-
-header,
-main,
-footer {
 
     position: relative;
-
-    z-index: 1;
-
 }
 
 
 
-main {
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    padding:
-        40px 20px;
-
-}
-
-
-
-/* -------------------------
+/* =========================
    ヘッダー
-------------------------- */
-
+========================= */
 
 header {
 
-    padding:
-        25px 20px;
-
+    padding: 25px 20px;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.25
-        );
-
+        rgba(255,255,255,0.25);
 
     backdrop-filter:
         blur(10px);
 
 }
-
 
 
 .header-container {
@@ -183,20 +136,17 @@ h1 {
 }
 
 
-
 .subtitle {
 
     margin-top:10px;
-
-    font-size:1.1rem;
 
 }
 
 
 
-/* -------------------------
+/* =========================
    ナビゲーション
-------------------------- */
+========================= */
 
 
 nav ul {
@@ -206,7 +156,6 @@ nav ul {
     padding:0;
 
     margin-top:25px;
-
 
     display:flex;
 
@@ -220,29 +169,16 @@ nav ul {
 
 nav a {
 
-    display:block;
-
-
-    padding:
-        10px 20px;
-
+    text-decoration:none;
 
     color:#333;
 
-    text-decoration:none;
-
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.45
-        );
-
+    padding:10px 20px;
 
     border-radius:30px;
 
+    background:
+        rgba(255,255,255,0.45);
 
     transition:.3s;
 
@@ -253,49 +189,39 @@ nav a {
 nav a:hover {
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.8
-        );
-
-
-    transform:
-        translateY(-3px);
+        rgba(255,255,255,0.8);
 
 }
 
 
 
-/* -------------------------
-   ヒーロー
-------------------------- */
+/* =========================
+   メイン
+========================= */
+
+
+main {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 20px;
+
+}
+
 
 
 .hero {
 
-
-    padding:
-        60px 30px;
-
+    padding:60px 30px;
 
     text-align:center;
 
-
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.35
-        );
-
+        rgba(255,255,255,0.35);
 
     border-radius:30px;
-
 
     backdrop-filter:
         blur(10px);
@@ -303,38 +229,30 @@ nav a:hover {
 }
 
 
-
 .hero h2 {
 
     font-size:2rem;
-
-    margin-bottom:20px;
 
 }
 
 
 
-/* -------------------------
+/* =========================
    カード
-------------------------- */
+========================= */
 
 
 .quick-links {
 
-
     display:grid;
 
-
     grid-template-columns:
-
         repeat(
             auto-fit,
             minmax(250px,1fr)
         );
 
-
     gap:25px;
-
 
     margin-top:40px;
 
@@ -344,89 +262,54 @@ nav a:hover {
 
 .card {
 
+    display:block;
 
-    padding:
-        30px;
-
+    padding:30px;
 
     text-decoration:none;
 
     color:#333;
 
-
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.45
-        );
-
+        rgba(255,255,255,0.45);
 
     border-radius:25px;
-
 
     backdrop-filter:
         blur(10px);
 
-
     transition:.3s;
 
-
 }
-
 
 
 .card:hover {
 
-
     transform:
-        translateY(-6px);
-
+        translateY(-5px);
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.7
-        );
+        rgba(255,255,255,0.7);
 
 }
 
 
 
-/* -------------------------
+/* =========================
    ニュース
-------------------------- */
+========================= */
 
 
 .latest-news {
 
-
     margin-top:50px;
-
 
     padding:30px;
 
-
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.4
-        );
-
+        rgba(255,255,255,0.35);
 
     border-radius:25px;
-
-
-    backdrop-filter:
-        blur(10px);
 
 }
 
@@ -434,29 +317,19 @@ nav a:hover {
 
 .news-item {
 
-
-    padding:
-
-        15px 0;
-
+    padding:15px 0;
 
     border-bottom:
-
         1px solid
-        rgba(
-            0,
-            0,
-            0,
-            0.15
-        );
+        rgba(0,0,0,0.1);
 
 }
 
 
 
-/* -------------------------
+/* =========================
    表
-------------------------- */
+========================= */
 
 
 table {
@@ -466,17 +339,7 @@ table {
     border-collapse:collapse;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.5
-        );
-
-    border-radius:15px;
-
-    overflow:hidden;
+        rgba(255,255,255,0.5);
 
 }
 
@@ -488,56 +351,34 @@ td {
     padding:12px;
 
     border-bottom:
-
         1px solid
-        rgba(
-            0,
-            0,
-            0,
-            0.1
-        );
+        rgba(0,0,0,0.1);
 
 }
 
 
 
-/* -------------------------
+/* =========================
    フッター
-------------------------- */
+========================= */
 
 
 footer {
 
-
     text-align:center;
 
-
-    padding:
-
-        25px;
-
+    padding:25px;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            0.25
-        );
-
-
-    backdrop-filter:
-        blur(10px);
-
+        rgba(255,255,255,0.25);
 
 }
 
 
 
-/* -------------------------
+/* =========================
    スマホ対応
-------------------------- */
+========================= */
 
 
 @media(max-width:600px){
@@ -550,7 +391,6 @@ footer {
     }
 
 
-
     nav ul {
 
         flex-direction:column;
@@ -558,13 +398,10 @@ footer {
     }
 
 
-
     nav a {
 
         text-align:center;
 
     }
-
-
 
 }
