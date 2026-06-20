@@ -20,65 +20,39 @@ html {
 
 body {
 
-    margin: 0;
+    margin:0;
 
-    font-family:
-        "Noto Sans JP",
-        "Yu Gothic",
-        sans-serif;
+    min-height:100vh;
 
-    color: #333;
-
-    min-height: 100vh;
-
-
-    /*
-       背景
-       下層：135°グラデーション
-       上層：七宝模様
-    */
     background-image:
 
-
-        /* 七宝 奇数行 */
+        /* 七宝 */
         radial-gradient(
-            circle 50px at 50px 50px,
+            circle 50px,
             transparent 48px,
             rgba(255,255,255,0.15) 49px,
             rgba(255,255,255,0.15) 51px,
             transparent 52px
         ),
 
-
-        /* 七宝 偶数行 */
+        /* 七宝（交互行） */
         radial-gradient(
-            circle 50px at 50px 50px,
+            circle 50px,
             transparent 48px,
             rgba(255,255,255,0.15) 49px,
             rgba(255,255,255,0.15) 51px,
             transparent 52px
         ),
 
-
-        /*
-           藤色・一斤染
-           135°
-        */
+        /* グラデーション */
         repeating-linear-gradient(
             135deg,
             #A59ACA 0px,
-            #A59ACA 500px,
             #F5B1AA 500px,
-            #F5B1AA 1000px
+            #A59ACA 1000px
         );
 
 
-    /*
-       七宝サイズ
-       円100px
-       横100px
-       縦50px
-    */
     background-size:
 
         100px 100px,
@@ -86,9 +60,6 @@ body {
         auto;
 
 
-    /*
-       行オフセット
-    */
     background-position:
 
         0 0,
@@ -99,7 +70,6 @@ body {
     background-repeat:
 
         repeat;
-
 
 }
 
